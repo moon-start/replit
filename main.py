@@ -33,8 +33,11 @@ def hello_world():
 @app.route('/remote')
 def remote():
   import os
-  SS = os.popen("git remote -V").read()
-  print(SS)
+  os.system('git config --global user.name "John Doe"')
+  # SS = os.popen("python remote.py").read()
+  # SS = os.popen("git remote -v").read()
+  SS = os.popen("git config --global user.name").read()
+  # print(SS)
   return SS
 
 
